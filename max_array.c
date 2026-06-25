@@ -7,33 +7,46 @@ void output(int arr[], int max_index);
 
 int main()
 {
-    
+    int n,max_index;
     printf("Enter number of elements: ");
-
-    if()
+    scanf("%d",&n);
+    if(n<=0)
     {
         printf("Invalid array size\n");
         return 0;
     }
-
+    int arr[n];
+    input(n,arr);
+    max_index=find_max_index(n,arr);
+    output(arr,max_index);
     return 0;
 }
 
 /* Function to read array elements */
 void input(int n, int arr[n])
 {
-    printf("Enter element at index %d: ", i);
-}
+    for(int i=0;i<n;i++)
+    {
+        printf("Enter element at index %d: ", i);
+        scanf("%d",&arr[i]);
+    }
 
+}
 /* Function to find index of maximum element */
 int find_max_index(int n, int arr[n])
 {
-
+    int max_index=0;
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]>arr[max_index])
+        max_index=i;
+    }
+    return max_index;
 }
 
 /* Function to display result */
 void output(int arr[], int max_index)
 {
-    printf("Maximum value = %d\n", );
-    printf("Index of maximum value = %d\n", );
+    printf("Maximum value = %d\n",arr[max_index]);
+    printf("Index of maximum value = %d\n",max_index );
 }
